@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "users": {
+                    "description": "An array of user URIs for the list of users to follow.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "users"
+            ],
+            "type": "object"
+        }
+    }
+}

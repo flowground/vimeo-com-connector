@@ -1,0 +1,93 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "bio": {
+                    "description": "The user's bio.",
+                    "example": "This is where you will find videos and news updates from the staff",
+                    "type": "string"
+                },
+                "content_filter": {
+                    "description": "A list of values describing the content in this video. Find the full list in the [/contentratings](https://developer.vimeo.com/api/endpoints/videos#GET/contentratings) endpoint. You must provide a comma-separated list if you are using a query string or an array if you are using JSON.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "link": {
+                    "description": "The user's custom Vimeo URL slug.",
+                    "example": "staff",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "The user's location.",
+                    "example": "New York City",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The user's display name.",
+                    "example": "Vimeo Staff",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "The default password for all future videos that this user uploads. To use this field, the `videos.privacy.view` field must be `password`.",
+                    "example": "hunter1",
+                    "type": "string"
+                },
+                "videos": {
+                    "properties": {
+                        "privacy": {
+                            "properties": {
+                                "add": {
+                                    "description": "Whether a user can add the video to an album, channel, or group. This value becomes the default add setting for all future videos uploaded by the user.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "comments": {
+                                    "description": "Who can comment on the video. This value becomes the default comment setting for all future videos that this user uploads.",
+                                    "enum": [
+                                        "anybody",
+                                        "contacts",
+                                        "nobody"
+                                    ],
+                                    "type": "string"
+                                },
+                                "download": {
+                                    "description": "Whether a user can download the video. This value becomes the default download setting for all future videos that this user uploads.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "embed": {
+                                    "description": "The privacy for embed videos. The `whitelist` value enables you to define all valid embed domains. See our [documentation](https://developer.vimeo.com/api/endpoints/videos#/{video_id}/privacy/domains) for adding and removing domains.",
+                                    "enum": [
+                                        "private",
+                                        "public",
+                                        "whitelist"
+                                    ],
+                                    "type": "string"
+                                },
+                                "view": {
+                                    "description": "Who can view the video. This value becomes the default view setting for all future videos that this user uploads.",
+                                    "enum": [
+                                        "anybody",
+                                        "contacts",
+                                        "disable",
+                                        "nobody",
+                                        "password",
+                                        "unlisted",
+                                        "users"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

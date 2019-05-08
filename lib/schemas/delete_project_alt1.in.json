@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "project_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "should_delete_clips": {
+            "required": false,
+            "example": "true",
+            "type": "boolean"
+        }
+    }
+}

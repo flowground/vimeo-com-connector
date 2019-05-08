@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "comment_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "text": {
+                    "description": "The next text of the comment.",
+                    "example": "I love this!",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text"
+            ],
+            "type": "object"
+        }
+    }
+}

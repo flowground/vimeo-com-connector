@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "genre_id": {
+            "required": true,
+            "example": "animation",
+            "type": "string"
+        }
+    }
+}

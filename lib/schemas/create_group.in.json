@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "description": "The description of the new group.",
+                    "example": "Want to participate in our weekly Challenges? Join the Group to receive messages and new Challenges!",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the new group.",
+                    "example": "Vimeo Weekend Challenge",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    }
+}

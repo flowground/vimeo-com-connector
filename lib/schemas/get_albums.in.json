@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "direction": {
+            "required": false,
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "example": "asc",
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "query": {
+            "required": false,
+            "example": "Stop motion",
+            "type": "string"
+        },
+        "sort": {
+            "required": false,
+            "enum": [
+                "alphabetical",
+                "date",
+                "duration",
+                "videos"
+            ],
+            "type": "string"
+        }
+    }
+}

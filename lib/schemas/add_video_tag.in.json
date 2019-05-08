@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "word": {
+            "required": true,
+            "example": "awesome",
+            "type": "string"
+        }
+    }
+}

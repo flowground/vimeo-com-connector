@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "countries": {
+                    "description": "An array of country codes.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "countries"
+            ],
+            "type": "object"
+        }
+    }
+}

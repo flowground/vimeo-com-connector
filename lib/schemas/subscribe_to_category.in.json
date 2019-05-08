@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "category": {
+            "required": true,
+            "example": 0,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        }
+    }
+}

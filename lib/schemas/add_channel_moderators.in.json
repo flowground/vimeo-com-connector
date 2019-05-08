@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "user_uri": {
+                    "description": "The URI of a user to add as a moderator.",
+                    "example": "/users/152184",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "user_uri"
+            ],
+            "type": "object"
+        }
+    }
+}

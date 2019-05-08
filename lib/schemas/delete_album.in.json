@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "album_id": {
+            "required": true,
+            "example": 3706071,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        }
+    }
+}

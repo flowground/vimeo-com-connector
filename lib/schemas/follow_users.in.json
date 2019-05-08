@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "users": {
+                    "description": "An array of user URIs for the list of users to follow.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "users"
+            ],
+            "type": "object"
+        }
+    }
+}

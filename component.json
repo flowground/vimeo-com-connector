@@ -1,0 +1,5328 @@
+{
+    "title": "Vimeo",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/vimeo.com/3.4/openapi.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.vimeo.com - Vimeo.com",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "bearer": {
+                "label": "bearer (bearer)",
+                "viewClass": "TextFieldView"
+            },
+            "oauth2": {
+                "label": "oauth2",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "/oauth/authorize",
+            "token_uri": "/oauth/access_token"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_endpoints": {
+            "main": "./lib/actions/get_endpoints.js",
+            "title": "Get an API specification",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_endpoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_categories": {
+            "main": "./lib/actions/get_categories.js",
+            "title": "Get all categories",
+            "description": "This method gets all existing categories.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_categories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_category": {
+            "main": "./lib/actions/get_category.js",
+            "title": "Get a specific category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_category.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_category_channels": {
+            "main": "./lib/actions/get_category_channels.js",
+            "title": "Get all the channels in a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_category_channels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_category_groups": {
+            "main": "./lib/actions/get_category_groups.js",
+            "title": "Get all the groups in a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_category_groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_category_videos": {
+            "main": "./lib/actions/get_category_videos.js",
+            "title": "Get all the videos in a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_category_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_category_for_video": {
+            "main": "./lib/actions/check_category_for_video.js",
+            "title": "Check for a video in a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_category_for_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channels": {
+            "main": "./lib/actions/get_channels.js",
+            "title": "Get all channels",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_channel": {
+            "main": "./lib/actions/create_channel.js",
+            "title": "Create a channel",
+            "description": "This method creates a new channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_channel": {
+            "main": "./lib/actions/delete_channel.js",
+            "title": "Delete a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel": {
+            "main": "./lib/actions/get_channel.js",
+            "title": "Get a specific channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_channel": {
+            "main": "./lib/actions/edit_channel.js",
+            "title": "Edit a channel",
+            "description": "This method edits the specified channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_categories": {
+            "main": "./lib/actions/get_channel_categories.js",
+            "title": "Get all the categories in a channel",
+            "description": "This method gets all the categories in the specified channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_categories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_channel_categories": {
+            "main": "./lib/actions/add_channel_categories.js",
+            "title": "Add a list of categories to a channel",
+            "description": "This method adds multiple categories to the specified channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_channel_categories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_channel_category": {
+            "main": "./lib/actions/delete_channel_category.js",
+            "title": "Remove a category from a channel",
+            "description": "This method removes a single category from the specified channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_channel_category.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "categorize_channel": {
+            "main": "./lib/actions/categorize_channel.js",
+            "title": "Categorize a channel",
+            "description": "This method adds a channel to a category.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/categorize_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_channel_moderators": {
+            "main": "./lib/actions/remove_channel_moderators.js",
+            "title": "Remove a list of channel moderators",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_channel_moderators.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_moderators": {
+            "main": "./lib/actions/get_channel_moderators.js",
+            "title": "Get all the moderators in a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_moderators.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "replace_channel_moderators": {
+            "main": "./lib/actions/replace_channel_moderators.js",
+            "title": "Replace the moderators of a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/replace_channel_moderators.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_channel_moderators": {
+            "main": "./lib/actions/add_channel_moderators.js",
+            "title": "Add a list of channel moderators",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_channel_moderators.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_channel_moderator": {
+            "main": "./lib/actions/remove_channel_moderator.js",
+            "title": "Remove a specific channel moderator",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_channel_moderator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_moderator": {
+            "main": "./lib/actions/get_channel_moderator.js",
+            "title": "Get a specific channel moderator",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_moderator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_channel_moderator": {
+            "main": "./lib/actions/add_channel_moderator.js",
+            "title": "Add a specific channel moderator",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_channel_moderator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_privacy_users": {
+            "main": "./lib/actions/get_channel_privacy_users.js",
+            "title": "Get all the users who can view a private channel",
+            "description": "This method gets all the users who have access to the specified private channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_privacy_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "set_channel_privacy_users": {
+            "main": "./lib/actions/set_channel_privacy_users.js",
+            "title": "Permit a list of users to view a private channel",
+            "description": "This method gives multiple users access to the specified private channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/set_channel_privacy_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_channel_privacy_user": {
+            "main": "./lib/actions/delete_channel_privacy_user.js",
+            "title": "Restrict a user from viewing a private channel",
+            "description": "This method prevents a single user from being able to access the specified private channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_channel_privacy_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "set_channel_privacy_user": {
+            "main": "./lib/actions/set_channel_privacy_user.js",
+            "title": "Permit a specific user to view a private channel",
+            "description": "This method gives a single user access to the specified private channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/set_channel_privacy_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_tags": {
+            "main": "./lib/actions/get_channel_tags.js",
+            "title": "Get all the tags that have been added to a channel",
+            "description": "This method gets all the tags that have been added to the specified channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_tags_to_channel": {
+            "main": "./lib/actions/add_tags_to_channel.js",
+            "title": "Add a list of tags to a channel",
+            "description": "This method adds multiple tags to the specified channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_tags_to_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_tag_from_channel": {
+            "main": "./lib/actions/delete_tag_from_channel.js",
+            "title": "Remove a tag from a channel",
+            "description": "This method removes a single tag from the specified channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_tag_from_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_channel_has_tag": {
+            "main": "./lib/actions/check_if_channel_has_tag.js",
+            "title": "Check if a tag has been added to a channel",
+            "description": "This method determines whether a specific tag has been added to the channel in question.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_channel_has_tag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_channel_tag": {
+            "main": "./lib/actions/add_channel_tag.js",
+            "title": "Add a specific tag to a channel",
+            "description": "This method adds a single tag to the specified channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_channel_tag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_subscribers": {
+            "main": "./lib/actions/get_channel_subscribers.js",
+            "title": "Get all the followers of a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_subscribers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_videos_from_channel": {
+            "main": "./lib/actions/remove_videos_from_channel.js",
+            "title": "Remove a list of videos from a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_videos_from_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_videos": {
+            "main": "./lib/actions/get_channel_videos.js",
+            "title": "Get all the videos in a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_videos_to_channel": {
+            "main": "./lib/actions/add_videos_to_channel.js",
+            "title": "Add a list of videos to a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_videos_to_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_from_channel": {
+            "main": "./lib/actions/delete_video_from_channel.js",
+            "title": "Remove a specific video from a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_from_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_video": {
+            "main": "./lib/actions/get_channel_video.js",
+            "title": "Get a specific video in a channel",
+            "description": "This method returns a specific video in a channel. You can use it to determine whether the video is in the channel.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_channel": {
+            "main": "./lib/actions/add_video_to_channel.js",
+            "title": "Add a specific video to a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comments_alt1": {
+            "main": "./lib/actions/get_comments_alt1.js",
+            "title": "Get all the comments on a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comments_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_comment_alt1": {
+            "main": "./lib/actions/create_comment_alt1.js",
+            "title": "Add a comment to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_comment_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_credits_alt1": {
+            "main": "./lib/actions/get_video_credits_alt1.js",
+            "title": "Get all the credited users in a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_credits_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_credit_alt1": {
+            "main": "./lib/actions/add_video_credit_alt1.js",
+            "title": "Credit a user in a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_credit_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_likes_alt1": {
+            "main": "./lib/actions/get_video_likes_alt1.js",
+            "title": "Get all the users who have liked a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_likes_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_thumbnails_alt1": {
+            "main": "./lib/actions/get_video_thumbnails_alt1.js",
+            "title": "Get all the thumbnails of a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_thumbnails_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_video_thumbnail_alt1": {
+            "main": "./lib/actions/create_video_thumbnail_alt1.js",
+            "title": "Add a video thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_video_thumbnail_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_privacy_users_alt1": {
+            "main": "./lib/actions/get_video_privacy_users_alt1.js",
+            "title": "Get all the users who can view a user's private videos by default",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_privacy_users_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_privacy_users_alt1": {
+            "main": "./lib/actions/add_video_privacy_users_alt1.js",
+            "title": "Permit a list of users to view a private video",
+            "description": "The body of this request should follow our\n[batch request format](https://developer.vimeo.com/api/common-formats#batch-requests). Each object must contain\na single `URI` field, and the value of this field must be the URI of the user who can view this video.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_privacy_users_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_text_tracks_alt1": {
+            "main": "./lib/actions/get_text_tracks_alt1.js",
+            "title": "Get all the text tracks of a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_text_tracks_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_text_track_alt1": {
+            "main": "./lib/actions/create_text_track_alt1.js",
+            "title": "Add a text track to a video",
+            "description": "For additional information, see our [text track upload guide](https://developer.vimeo.com/api/upload/texttracks).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_text_track_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_content_ratings": {
+            "main": "./lib/actions/get_content_ratings.js",
+            "title": "Get all content ratings",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_content_ratings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_cc_licenses": {
+            "main": "./lib/actions/get_cc_licenses.js",
+            "title": "Get all Creative Commons licenses",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_cc_licenses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_groups": {
+            "main": "./lib/actions/get_groups.js",
+            "title": "Get all groups",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_group": {
+            "main": "./lib/actions/create_group.js",
+            "title": "Create a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_group.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_group": {
+            "main": "./lib/actions/delete_group.js",
+            "title": "Delete a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_group.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_group": {
+            "main": "./lib/actions/get_group.js",
+            "title": "Get a specific group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_group.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_group_members": {
+            "main": "./lib/actions/get_group_members.js",
+            "title": "Get all the members of a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_group_members.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_group_videos": {
+            "main": "./lib/actions/get_group_videos.js",
+            "title": "Get all the videos in a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_group_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_from_group": {
+            "main": "./lib/actions/delete_video_from_group.js",
+            "title": "Remove a video from a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_from_group.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_group_video": {
+            "main": "./lib/actions/get_group_video.js",
+            "title": "Get a specific video in a group",
+            "description": "Check if a group has a video.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_group_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_group": {
+            "main": "./lib/actions/add_video_to_group.js",
+            "title": "Add a video to a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_group.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_languages": {
+            "main": "./lib/actions/get_languages.js",
+            "title": "Get all languages",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_languages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_alt1": {
+            "main": "./lib/actions/get_user_alt1.js",
+            "title": "Get a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_user_alt1": {
+            "main": "./lib/actions/edit_user_alt1.js",
+            "title": "Edit a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_user_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_albums_alt1": {
+            "main": "./lib/actions/get_albums_alt1.js",
+            "title": "Get all the albums that belong to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_albums_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_album_alt1": {
+            "main": "./lib/actions/create_album_alt1.js",
+            "title": "Create an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_album_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_album_alt1": {
+            "main": "./lib/actions/delete_album_alt1.js",
+            "title": "Delete an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_album_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_alt1": {
+            "main": "./lib/actions/get_album_alt1.js",
+            "title": "Get a specific album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_album_alt1": {
+            "main": "./lib/actions/edit_album_alt1.js",
+            "title": "Edit an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_album_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_videos_alt1": {
+            "main": "./lib/actions/get_album_videos_alt1.js",
+            "title": "Get all the videos in an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_videos_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "replace_videos_in_album_alt1": {
+            "main": "./lib/actions/replace_videos_in_album_alt1.js",
+            "title": "Replace all the videos in an album",
+            "description": "This method replaces all the existing videos in an album with one or more videos.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/replace_videos_in_album_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_video_from_album_alt1": {
+            "main": "./lib/actions/remove_video_from_album_alt1.js",
+            "title": "Remove a video from an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_video_from_album_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_video_alt1": {
+            "main": "./lib/actions/get_album_video_alt1.js",
+            "title": "Get a specific video in an album",
+            "description": "This method gets a single video from an album. You can use this method to determine whether the album contains the specified video.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_video_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_album_alt1": {
+            "main": "./lib/actions/add_video_to_album_alt1.js",
+            "title": "Add a specific video to an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_album_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "set_video_as_album_thumbnail_alt1": {
+            "main": "./lib/actions/set_video_as_album_thumbnail_alt1.js",
+            "title": "Set a video as the album thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/set_video_as_album_thumbnail_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_appearances_alt1": {
+            "main": "./lib/actions/get_appearances_alt1.js",
+            "title": "Get all the videos in which a user appears",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_appearances_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_category_subscriptions_alt1": {
+            "main": "./lib/actions/get_category_subscriptions_alt1.js",
+            "title": "Get all the categories that a user follows",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_category_subscriptions_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unsubscribe_from_category_alt1": {
+            "main": "./lib/actions/unsubscribe_from_category_alt1.js",
+            "title": "Unsubscribe a user from a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unsubscribe_from_category_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_subscribed_to_category_alt1": {
+            "main": "./lib/actions/check_if_user_subscribed_to_category_alt1.js",
+            "title": "Check if a user follows a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_subscribed_to_category_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "subscribe_to_category_alt1": {
+            "main": "./lib/actions/subscribe_to_category_alt1.js",
+            "title": "Subscribe a user to a single category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/subscribe_to_category_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_subscriptions_alt1": {
+            "main": "./lib/actions/get_channel_subscriptions_alt1.js",
+            "title": "Get all the channels to which a user subscribes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_subscriptions_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unsubscribe_from_channel_alt1": {
+            "main": "./lib/actions/unsubscribe_from_channel_alt1.js",
+            "title": "Unsubscribe a user from a specific channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unsubscribe_from_channel_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_subscribed_to_channel_alt1": {
+            "main": "./lib/actions/check_if_user_subscribed_to_channel_alt1.js",
+            "title": "Check if a user follows a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_subscribed_to_channel_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "subscribe_to_channel_alt1": {
+            "main": "./lib/actions/subscribe_to_channel_alt1.js",
+            "title": "Subscribe a user to a specific channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/subscribe_to_channel_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_custom_logos_alt1": {
+            "main": "./lib/actions/get_custom_logos_alt1.js",
+            "title": "Get all the custom logos that belong to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_custom_logos_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_custom_logo_alt1": {
+            "main": "./lib/actions/create_custom_logo_alt1.js",
+            "title": "Add a custom logo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_custom_logo_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_custom_logo_alt1": {
+            "main": "./lib/actions/get_custom_logo_alt1.js",
+            "title": "Get a specific custom logo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_custom_logo_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_feed_alt1": {
+            "main": "./lib/actions/get_feed_alt1.js",
+            "title": "Get all videos in a user's feed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_feed_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_followers_alt1": {
+            "main": "./lib/actions/get_followers_alt1.js",
+            "title": "Get all the followers of a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_followers_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_following_alt1": {
+            "main": "./lib/actions/get_user_following_alt1.js",
+            "title": "Get all the users that a user is following",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_following_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "follow_users_alt1": {
+            "main": "./lib/actions/follow_users_alt1.js",
+            "title": "Follow a list of users",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/follow_users_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unfollow_user_alt1": {
+            "main": "./lib/actions/unfollow_user_alt1.js",
+            "title": "Unfollow a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unfollow_user_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_is_following_alt1": {
+            "main": "./lib/actions/check_if_user_is_following_alt1.js",
+            "title": "Check if a user is following another user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_is_following_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "follow_user_alt1": {
+            "main": "./lib/actions/follow_user_alt1.js",
+            "title": "Follow a specific user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/follow_user_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_groups_alt1": {
+            "main": "./lib/actions/get_user_groups_alt1.js",
+            "title": "Get all the groups that a user has joined",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_groups_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "leave_group_alt1": {
+            "main": "./lib/actions/leave_group_alt1.js",
+            "title": "Remove a user from a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/leave_group_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_joined_group_alt1": {
+            "main": "./lib/actions/check_if_user_joined_group_alt1.js",
+            "title": "Check if a user has joined a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_joined_group_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "join_group_alt1": {
+            "main": "./lib/actions/join_group_alt1.js",
+            "title": "Add a user to a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/join_group_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_likes_alt1": {
+            "main": "./lib/actions/get_likes_alt1.js",
+            "title": "Get all the videos that a user has liked",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_likes_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unlike_video_alt1": {
+            "main": "./lib/actions/unlike_video_alt1.js",
+            "title": "Cause a user to unlike a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unlike_video_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_liked_video_alt1": {
+            "main": "./lib/actions/check_if_user_liked_video_alt1.js",
+            "title": "Check if a user has liked a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_liked_video_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "like_video_alt1": {
+            "main": "./lib/actions/like_video_alt1.js",
+            "title": "Cause a user to like a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/like_video_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_vods_alt1": {
+            "main": "./lib/actions/get_user_vods_alt1.js",
+            "title": "Get all the On Demand pages of a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_vods_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_vod_alt1": {
+            "main": "./lib/actions/create_vod_alt1.js",
+            "title": "Create an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_vod_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_purchases": {
+            "main": "./lib/actions/get_vod_purchases.js",
+            "title": "Get all the On Demand purchases and rentals that a user has made",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_purchases.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_vod_was_purchased_alt1": {
+            "main": "./lib/actions/check_if_vod_was_purchased_alt1.js",
+            "title": "Check if a user has made a purchase or rental from an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_vod_was_purchased_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_pictures_alt1": {
+            "main": "./lib/actions/get_pictures_alt1.js",
+            "title": "Get all the pictures that belong to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_pictures_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_picture_alt1": {
+            "main": "./lib/actions/create_picture_alt1.js",
+            "title": "Add a user picture",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_picture_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_picture_alt1": {
+            "main": "./lib/actions/delete_picture_alt1.js",
+            "title": "Delete a user picture",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_picture_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_picture_alt1": {
+            "main": "./lib/actions/get_picture_alt1.js",
+            "title": "Get a specific user picture",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_picture_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_picture_alt1": {
+            "main": "./lib/actions/edit_picture_alt1.js",
+            "title": "Edit a user picture",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_picture_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_portfolios_alt1": {
+            "main": "./lib/actions/get_portfolios_alt1.js",
+            "title": "Get all the portfolios that belong to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_portfolios_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_portfolio_alt1": {
+            "main": "./lib/actions/get_portfolio_alt1.js",
+            "title": "Get a specific portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_portfolio_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_portfolio_videos_alt1": {
+            "main": "./lib/actions/get_portfolio_videos_alt1.js",
+            "title": "Get all the videos in a portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_portfolio_videos_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_from_portfolio_alt1": {
+            "main": "./lib/actions/delete_video_from_portfolio_alt1.js",
+            "title": "Remove a video from a portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_from_portfolio_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_portfolio_video_alt1": {
+            "main": "./lib/actions/get_portfolio_video_alt1.js",
+            "title": "Get a specific video in a portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_portfolio_video_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_portfolio_alt1": {
+            "main": "./lib/actions/add_video_to_portfolio_alt1.js",
+            "title": "Add a video to a portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_portfolio_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_embed_presets_alt1": {
+            "main": "./lib/actions/get_embed_presets_alt1.js",
+            "title": "Get all the embed presets that a user has created",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_embed_presets_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_embed_preset_alt1": {
+            "main": "./lib/actions/get_embed_preset_alt1.js",
+            "title": "Get a specific embed preset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_embed_preset_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_embed_preset_alt1": {
+            "main": "./lib/actions/edit_embed_preset_alt1.js",
+            "title": "Edit an embed preset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_embed_preset_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_embed_preset_videos_alt1": {
+            "main": "./lib/actions/get_embed_preset_videos_alt1.js",
+            "title": "Get all the videos that have been added to an embed preset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_embed_preset_videos_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_projects_alt1": {
+            "main": "./lib/actions/get_projects_alt1.js",
+            "title": "Get all the projects that belong to a user",
+            "description": "This method gets all the projects that belong to the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_projects_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_project_alt1": {
+            "main": "./lib/actions/create_project_alt1.js",
+            "title": "Create a project",
+            "description": "This method creates a new project for the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_project_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_project_alt1": {
+            "main": "./lib/actions/delete_project_alt1.js",
+            "title": "Delete a project",
+            "description": "This method deletes a project and optionally also the videos that it contains.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_project_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_project_alt1": {
+            "main": "./lib/actions/get_project_alt1.js",
+            "title": "Get a specific project",
+            "description": "This method gets a single project that belongs to the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_project_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_project_alt1": {
+            "main": "./lib/actions/edit_project_alt1.js",
+            "title": "Edit a project",
+            "description": "This method edits an existing project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_project_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_videos_from_project_alt1": {
+            "main": "./lib/actions/remove_videos_from_project_alt1.js",
+            "title": "Remove a list of videos from a project",
+            "description": "This method removed multiple videos from the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_videos_from_project_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_project_videos_alt1": {
+            "main": "./lib/actions/get_project_videos_alt1.js",
+            "title": "Get all the videos in a project",
+            "description": "This method gets all the videos that belong to the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_project_videos_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_videos_to_project_alt1": {
+            "main": "./lib/actions/add_videos_to_project_alt1.js",
+            "title": "Add a list of videos to a project",
+            "description": "This method adds multiple videos to the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_videos_to_project_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_video_from_project_alt1": {
+            "main": "./lib/actions/remove_video_from_project_alt1.js",
+            "title": "Remove a specific video from a project",
+            "description": "This method removes a single video from the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_video_from_project_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_project_alt1": {
+            "main": "./lib/actions/add_video_to_project_alt1.js",
+            "title": "Add a specific video to a project",
+            "description": "This method adds a single video to the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_project_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_videos_alt1": {
+            "main": "./lib/actions/get_videos_alt1.js",
+            "title": "Get all the videos that a user has uploaded",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_videos_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "upload_video_alt1": {
+            "main": "./lib/actions/upload_video_alt1.js",
+            "title": "Upload a video",
+            "description": "Begin the video upload process. For more information, see our [upload documentation](https://developer.vimeo.com/api/upload/videos).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/upload_video_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_owns_video_alt1": {
+            "main": "./lib/actions/check_if_user_owns_video_alt1.js",
+            "title": "Check if a user owns a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_owns_video_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_watch_history": {
+            "main": "./lib/actions/delete_watch_history.js",
+            "title": "Delete a user's watch history",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_watch_history.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_watch_history": {
+            "main": "./lib/actions/get_watch_history.js",
+            "title": "Get all the videos that a user has watched",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_watch_history.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_from_watch_history": {
+            "main": "./lib/actions/delete_from_watch_history.js",
+            "title": "Delete a specific video from a user's watch history",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_from_watch_history.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_watch_later_queue_alt1": {
+            "main": "./lib/actions/get_watch_later_queue_alt1.js",
+            "title": "Get all the videos in a user's Watch Later queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_watch_later_queue_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_from_watch_later_alt1": {
+            "main": "./lib/actions/delete_video_from_watch_later_alt1.js",
+            "title": "Remove a video from a user's Watch Later queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_from_watch_later_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_watch_later_queue_alt1": {
+            "main": "./lib/actions/check_watch_later_queue_alt1.js",
+            "title": "Check if a user has added a specific video to their Watch Later queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_watch_later_queue_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_watch_later_alt1": {
+            "main": "./lib/actions/add_video_to_watch_later_alt1.js",
+            "title": "Add a video to a user's Watch Later queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_watch_later_alt1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "exchange_auth_code": {
+            "main": "./lib/actions/exchange_auth_code.js",
+            "title": "Exchange an authorization code for an access token",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/exchange_auth_code.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "client_auth": {
+            "main": "./lib/actions/client_auth.js",
+            "title": "Authorize a client with OAuth",
+            "description": "For information on utilizing OAuth client authorization, see our\n[authentication](/api/authentication#generate-unauthenticated-tokens) documentation or the\n[Client Credentials Grant](https://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.4) section of the\n[OAuth spec](https://tools.ietf.org/html/draft-ietf-oauth-v2-31.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/client_auth.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "convert_access_token": {
+            "main": "./lib/actions/convert_access_token.js",
+            "title": "Convert OAuth 1 access tokens to OAuth 2 access tokens",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/convert_access_token.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "verify_token": {
+            "main": "./lib/actions/verify_token.js",
+            "title": "Verify an OAuth 2 token",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/verify_token.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_genres": {
+            "main": "./lib/actions/get_vod_genres.js",
+            "title": "Get all On Demand genres",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_genres.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_genre": {
+            "main": "./lib/actions/get_vod_genre.js",
+            "title": "Get a specific On Demand genre",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_genre.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_genre_vods": {
+            "main": "./lib/actions/get_genre_vods.js",
+            "title": "Get all the On Demand pages in a genre",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_genre_vods.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_genre_vod": {
+            "main": "./lib/actions/get_genre_vod.js",
+            "title": "Get a specific On Demand page in a genre",
+            "description": "Check whether a genre contains an On Demand page.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_genre_vod.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_vod_draft": {
+            "main": "./lib/actions/delete_vod_draft.js",
+            "title": "Delete a draft of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_vod_draft.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod": {
+            "main": "./lib/actions/get_vod.js",
+            "title": "Get a specific On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_vod": {
+            "main": "./lib/actions/edit_vod.js",
+            "title": "Edit an On Demand page",
+            "description": "Enable preorders or publish the page.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_vod.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_backgrounds": {
+            "main": "./lib/actions/get_vod_backgrounds.js",
+            "title": "Get all the backgrounds of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_backgrounds.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_vod_background": {
+            "main": "./lib/actions/create_vod_background.js",
+            "title": "Add a background to an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_vod_background.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_vod_background": {
+            "main": "./lib/actions/delete_vod_background.js",
+            "title": "Remove a background from an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_vod_background.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_background": {
+            "main": "./lib/actions/get_vod_background.js",
+            "title": "Get a specific background of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_background.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_vod_background": {
+            "main": "./lib/actions/edit_vod_background.js",
+            "title": "Edit a background of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_vod_background.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_genres_by_ondemand_id": {
+            "main": "./lib/actions/get_vod_genres_by_ondemand_id.js",
+            "title": "Get all the genres of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_genres_by_ondemand_id.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_vod_genre": {
+            "main": "./lib/actions/delete_vod_genre.js",
+            "title": "Remove a genre from an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_vod_genre.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_genre_by_ondemand_id": {
+            "main": "./lib/actions/get_vod_genre_by_ondemand_id.js",
+            "title": "Check whether an On Demand page belongs to a genre",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_genre_by_ondemand_id.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_vod_genre": {
+            "main": "./lib/actions/add_vod_genre.js",
+            "title": "Add a genre to an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_vod_genre.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_likes": {
+            "main": "./lib/actions/get_vod_likes.js",
+            "title": "Get all the users who have liked a video on an On Demand page",
+            "description": "This method gets all the users who have liked a particular video on an On Demand page.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_likes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_posters": {
+            "main": "./lib/actions/get_vod_posters.js",
+            "title": "Get all the posters of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_posters.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_vod_poster": {
+            "main": "./lib/actions/add_vod_poster.js",
+            "title": "Add a poster to an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_vod_poster.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_poster": {
+            "main": "./lib/actions/get_vod_poster.js",
+            "title": "Get a specific poster of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_poster.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_vod_poster": {
+            "main": "./lib/actions/edit_vod_poster.js",
+            "title": "Edit a poster of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_vod_poster.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_promotions": {
+            "main": "./lib/actions/get_vod_promotions.js",
+            "title": "Get all the promotions on an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_promotions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_vod_promotion": {
+            "main": "./lib/actions/create_vod_promotion.js",
+            "title": "Add a promotion to an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_vod_promotion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_vod_promotion": {
+            "main": "./lib/actions/delete_vod_promotion.js",
+            "title": "Remove a promotion from an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_vod_promotion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_promotion": {
+            "main": "./lib/actions/get_vod_promotion.js",
+            "title": "Get a specific promotion on an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_promotion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_promotion_codes": {
+            "main": "./lib/actions/get_vod_promotion_codes.js",
+            "title": "Get all the codes of a promotion on an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_promotion_codes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_vod_regions": {
+            "main": "./lib/actions/delete_vod_regions.js",
+            "title": "Remove a list of regions from an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_vod_regions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_regions": {
+            "main": "./lib/actions/get_vod_regions.js",
+            "title": "Get all the regions of an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_regions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "set_vod_regions": {
+            "main": "./lib/actions/set_vod_regions.js",
+            "title": "Add a list of regions to an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/set_vod_regions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_vod_region": {
+            "main": "./lib/actions/delete_vod_region.js",
+            "title": "Remove a specific region from an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_vod_region.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_region": {
+            "main": "./lib/actions/get_vod_region.js",
+            "title": "Get a specific region of an On Demand page",
+            "description": "Checks whether an On Demand page belongs to a region.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_region.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_vod_region": {
+            "main": "./lib/actions/add_vod_region.js",
+            "title": "Add a specific region to an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_vod_region.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_seasons": {
+            "main": "./lib/actions/get_vod_seasons.js",
+            "title": "Get all the seasons on an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_seasons.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_season": {
+            "main": "./lib/actions/get_vod_season.js",
+            "title": "Get a specific season on an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_season.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_season_videos": {
+            "main": "./lib/actions/get_vod_season_videos.js",
+            "title": "Get all the videos in a season on an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_season_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_videos": {
+            "main": "./lib/actions/get_vod_videos.js",
+            "title": "Get all the videos on an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_from_vod": {
+            "main": "./lib/actions/delete_video_from_vod.js",
+            "title": "Remove a video from an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_from_vod.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_vod_video": {
+            "main": "./lib/actions/get_vod_video.js",
+            "title": "Get a specific video on an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_vod_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_vod": {
+            "main": "./lib/actions/add_video_to_vod.js",
+            "title": "Add a video to an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_vod.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_regions": {
+            "main": "./lib/actions/get_regions.js",
+            "title": "Get all the On Demand regions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_regions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_region": {
+            "main": "./lib/actions/get_region.js",
+            "title": "Get a specific On Demand region",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_region.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tag": {
+            "main": "./lib/actions/get_tag.js",
+            "title": "Get a specific tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_videos_with_tag": {
+            "main": "./lib/actions/get_videos_with_tag.js",
+            "title": "Get all the videos with a specific tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_videos_with_tag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_token": {
+            "main": "./lib/actions/delete_token.js",
+            "title": "Revoke the current access token",
+            "description": "This method enables an app to notify the API that it is done with a token and that the token can be discarded.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_token.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "search_users": {
+            "main": "./lib/actions/search_users.js",
+            "title": "Search for users",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/search_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user": {
+            "main": "./lib/actions/get_user.js",
+            "title": "Get a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_user": {
+            "main": "./lib/actions/edit_user.js",
+            "title": "Edit a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_albums": {
+            "main": "./lib/actions/get_albums.js",
+            "title": "Get all the albums that belong to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_albums.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_album": {
+            "main": "./lib/actions/create_album.js",
+            "title": "Create an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_album.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_album": {
+            "main": "./lib/actions/delete_album.js",
+            "title": "Delete an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_album.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album": {
+            "main": "./lib/actions/get_album.js",
+            "title": "Get a specific album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_album": {
+            "main": "./lib/actions/edit_album.js",
+            "title": "Edit an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_album.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_custom_thumbs": {
+            "main": "./lib/actions/get_album_custom_thumbs.js",
+            "title": "Get all the custom upload thumbnails of an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_custom_thumbs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_album_custom_thumb": {
+            "main": "./lib/actions/create_album_custom_thumb.js",
+            "title": "Add a custom uploaded thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_album_custom_thumb.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_album_custom_thumbnail": {
+            "main": "./lib/actions/delete_album_custom_thumbnail.js",
+            "title": "Remove a custom uploaded album thumbnail",
+            "description": "This method removes a custom uploaded thumbnail from the specified album.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_album_custom_thumbnail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_custom_thumbnail": {
+            "main": "./lib/actions/get_album_custom_thumbnail.js",
+            "title": "Get a specific custom uploaded album thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_custom_thumbnail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "replace_album_custom_thumb": {
+            "main": "./lib/actions/replace_album_custom_thumb.js",
+            "title": "Replace a custom uploaded album thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/replace_album_custom_thumb.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_logos": {
+            "main": "./lib/actions/get_album_logos.js",
+            "title": "Get all the custom logos of an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_logos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_album_logo": {
+            "main": "./lib/actions/create_album_logo.js",
+            "title": "Add a custom album logo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_album_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_album_logo": {
+            "main": "./lib/actions/delete_album_logo.js",
+            "title": "Remove a custom album logo",
+            "description": "This method removes a custom logo from the specified album.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_album_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_logo": {
+            "main": "./lib/actions/get_album_logo.js",
+            "title": "Get a specific custom album logo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "replace_album_logo": {
+            "main": "./lib/actions/replace_album_logo.js",
+            "title": "Replace a custom album logo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/replace_album_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_videos": {
+            "main": "./lib/actions/get_album_videos.js",
+            "title": "Get all the videos in an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "replace_videos_in_album": {
+            "main": "./lib/actions/replace_videos_in_album.js",
+            "title": "Replace all the videos in an album",
+            "description": "This method replaces all the existing videos in an album with one or more videos.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/replace_videos_in_album.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_video_from_album": {
+            "main": "./lib/actions/remove_video_from_album.js",
+            "title": "Remove a video from an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_video_from_album.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_album_video": {
+            "main": "./lib/actions/get_album_video.js",
+            "title": "Get a specific video in an album",
+            "description": "This method gets a single video from an album. You can use this method to determine whether the album contains the specified video.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_album_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_album": {
+            "main": "./lib/actions/add_video_to_album.js",
+            "title": "Add a specific video to an album",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_album.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "set_video_as_album_thumbnail": {
+            "main": "./lib/actions/set_video_as_album_thumbnail.js",
+            "title": "Set a video as the album thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/set_video_as_album_thumbnail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_appearances": {
+            "main": "./lib/actions/get_appearances.js",
+            "title": "Get all the videos in which a user appears",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_appearances.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_category_subscriptions": {
+            "main": "./lib/actions/get_category_subscriptions.js",
+            "title": "Get all the categories that a user follows",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_category_subscriptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unsubscribe_from_category": {
+            "main": "./lib/actions/unsubscribe_from_category.js",
+            "title": "Unsubscribe a user from a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unsubscribe_from_category.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_subscribed_to_category": {
+            "main": "./lib/actions/check_if_user_subscribed_to_category.js",
+            "title": "Check if a user follows a category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_subscribed_to_category.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "subscribe_to_category": {
+            "main": "./lib/actions/subscribe_to_category.js",
+            "title": "Subscribe a user to a single category",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/subscribe_to_category.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_channel_subscriptions": {
+            "main": "./lib/actions/get_channel_subscriptions.js",
+            "title": "Get all the channels to which a user subscribes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_channel_subscriptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unsubscribe_from_channel": {
+            "main": "./lib/actions/unsubscribe_from_channel.js",
+            "title": "Unsubscribe a user from a specific channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unsubscribe_from_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_subscribed_to_channel": {
+            "main": "./lib/actions/check_if_user_subscribed_to_channel.js",
+            "title": "Check if a user follows a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_subscribed_to_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "subscribe_to_channel": {
+            "main": "./lib/actions/subscribe_to_channel.js",
+            "title": "Subscribe a user to a specific channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/subscribe_to_channel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_custom_logos": {
+            "main": "./lib/actions/get_custom_logos.js",
+            "title": "Get all the custom logos that belong to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_custom_logos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_custom_logo": {
+            "main": "./lib/actions/create_custom_logo.js",
+            "title": "Add a custom logo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_custom_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_custom_logo": {
+            "main": "./lib/actions/get_custom_logo.js",
+            "title": "Get a specific custom logo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_custom_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_feed": {
+            "main": "./lib/actions/get_feed.js",
+            "title": "Get all videos in a user's feed",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_feed.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_followers": {
+            "main": "./lib/actions/get_followers.js",
+            "title": "Get all the followers of a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_followers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_following": {
+            "main": "./lib/actions/get_user_following.js",
+            "title": "Get all the users that a user is following",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_following.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "follow_users": {
+            "main": "./lib/actions/follow_users.js",
+            "title": "Follow a list of users",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/follow_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unfollow_user": {
+            "main": "./lib/actions/unfollow_user.js",
+            "title": "Unfollow a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unfollow_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_is_following": {
+            "main": "./lib/actions/check_if_user_is_following.js",
+            "title": "Check if a user is following another user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_is_following.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "follow_user": {
+            "main": "./lib/actions/follow_user.js",
+            "title": "Follow a specific user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/follow_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_groups": {
+            "main": "./lib/actions/get_user_groups.js",
+            "title": "Get all the groups that a user has joined",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_groups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "leave_group": {
+            "main": "./lib/actions/leave_group.js",
+            "title": "Remove a user from a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/leave_group.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_joined_group": {
+            "main": "./lib/actions/check_if_user_joined_group.js",
+            "title": "Check if a user has joined a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_joined_group.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "join_group": {
+            "main": "./lib/actions/join_group.js",
+            "title": "Add a user to a group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/join_group.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_likes": {
+            "main": "./lib/actions/get_likes.js",
+            "title": "Get all the videos that a user has liked",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_likes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unlike_video": {
+            "main": "./lib/actions/unlike_video.js",
+            "title": "Cause a user to unlike a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unlike_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_liked_video": {
+            "main": "./lib/actions/check_if_user_liked_video.js",
+            "title": "Check if a user has liked a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_liked_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "like_video": {
+            "main": "./lib/actions/like_video.js",
+            "title": "Cause a user to like a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/like_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_user_vods": {
+            "main": "./lib/actions/get_user_vods.js",
+            "title": "Get all the On Demand pages of a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_user_vods.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_vod": {
+            "main": "./lib/actions/create_vod.js",
+            "title": "Create an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_vod.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_vod_was_purchased": {
+            "main": "./lib/actions/check_if_vod_was_purchased.js",
+            "title": "Check if a user has made a purchase or rental from an On Demand page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_vod_was_purchased.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_pictures": {
+            "main": "./lib/actions/get_pictures.js",
+            "title": "Get all the pictures that belong to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_pictures.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_picture": {
+            "main": "./lib/actions/create_picture.js",
+            "title": "Add a user picture",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_picture.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_picture": {
+            "main": "./lib/actions/delete_picture.js",
+            "title": "Delete a user picture",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_picture.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_picture": {
+            "main": "./lib/actions/get_picture.js",
+            "title": "Get a specific user picture",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_picture.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_picture": {
+            "main": "./lib/actions/edit_picture.js",
+            "title": "Edit a user picture",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_picture.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_portfolios": {
+            "main": "./lib/actions/get_portfolios.js",
+            "title": "Get all the portfolios that belong to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_portfolios.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_portfolio": {
+            "main": "./lib/actions/get_portfolio.js",
+            "title": "Get a specific portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_portfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_portfolio_videos": {
+            "main": "./lib/actions/get_portfolio_videos.js",
+            "title": "Get all the videos in a portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_portfolio_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_from_portfolio": {
+            "main": "./lib/actions/delete_video_from_portfolio.js",
+            "title": "Remove a video from a portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_from_portfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_portfolio_video": {
+            "main": "./lib/actions/get_portfolio_video.js",
+            "title": "Get a specific video in a portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_portfolio_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_portfolio": {
+            "main": "./lib/actions/add_video_to_portfolio.js",
+            "title": "Add a video to a portfolio",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_portfolio.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_embed_presets": {
+            "main": "./lib/actions/get_embed_presets.js",
+            "title": "Get all the embed presets that a user has created",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_embed_presets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_embed_preset": {
+            "main": "./lib/actions/get_embed_preset.js",
+            "title": "Get a specific embed preset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_embed_preset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_embed_preset": {
+            "main": "./lib/actions/edit_embed_preset.js",
+            "title": "Edit an embed preset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_embed_preset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_embed_preset_videos": {
+            "main": "./lib/actions/get_embed_preset_videos.js",
+            "title": "Get all the videos that have been added to an embed preset",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_embed_preset_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_projects": {
+            "main": "./lib/actions/get_projects.js",
+            "title": "Get all the projects that belong to a user",
+            "description": "This method gets all the projects that belong to the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_projects.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_project": {
+            "main": "./lib/actions/create_project.js",
+            "title": "Create a project",
+            "description": "This method creates a new project for the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_project.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_project": {
+            "main": "./lib/actions/delete_project.js",
+            "title": "Delete a project",
+            "description": "This method deletes a project and optionally also the videos that it contains.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_project.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_project": {
+            "main": "./lib/actions/get_project.js",
+            "title": "Get a specific project",
+            "description": "This method gets a single project that belongs to the specified user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_project.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_project": {
+            "main": "./lib/actions/edit_project.js",
+            "title": "Edit a project",
+            "description": "This method edits an existing project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_project.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_videos_from_project": {
+            "main": "./lib/actions/remove_videos_from_project.js",
+            "title": "Remove a list of videos from a project",
+            "description": "This method removed multiple videos from the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_videos_from_project.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_project_videos": {
+            "main": "./lib/actions/get_project_videos.js",
+            "title": "Get all the videos in a project",
+            "description": "This method gets all the videos that belong to the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_project_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_videos_to_project": {
+            "main": "./lib/actions/add_videos_to_project.js",
+            "title": "Add a list of videos to a project",
+            "description": "This method adds multiple videos to the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_videos_to_project.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "remove_video_from_project": {
+            "main": "./lib/actions/remove_video_from_project.js",
+            "title": "Remove a specific video from a project",
+            "description": "This method removes a single video from the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/remove_video_from_project.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_project": {
+            "main": "./lib/actions/add_video_to_project.js",
+            "title": "Add a specific video to a project",
+            "description": "This method adds a single video to the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_project.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "complete_streaming_upload": {
+            "main": "./lib/actions/complete_streaming_upload.js",
+            "title": "Complete a user's streaming upload",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/complete_streaming_upload.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_upload_attempt": {
+            "main": "./lib/actions/get_upload_attempt.js",
+            "title": "Get a user's upload attempt",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_upload_attempt.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_videos": {
+            "main": "./lib/actions/get_videos.js",
+            "title": "Get all the videos that a user has uploaded",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "upload_video": {
+            "main": "./lib/actions/upload_video.js",
+            "title": "Upload a video",
+            "description": "Begin the video upload process. For more information, see our [upload documentation](https://developer.vimeo.com/api/upload/videos).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/upload_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_if_user_owns_video": {
+            "main": "./lib/actions/check_if_user_owns_video.js",
+            "title": "Check if a user owns a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_if_user_owns_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_watch_later_queue": {
+            "main": "./lib/actions/get_watch_later_queue.js",
+            "title": "Get all the videos in a user's Watch Later queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_watch_later_queue.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_from_watch_later": {
+            "main": "./lib/actions/delete_video_from_watch_later.js",
+            "title": "Remove a video from a user's Watch Later queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_from_watch_later.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_watch_later_queue": {
+            "main": "./lib/actions/check_watch_later_queue.js",
+            "title": "Check if a user has added a specific video to their Watch Later queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_watch_later_queue.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_to_watch_later": {
+            "main": "./lib/actions/add_video_to_watch_later.js",
+            "title": "Add a video to a user's Watch Later queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_to_watch_later.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "search_videos": {
+            "main": "./lib/actions/search_videos.js",
+            "title": "Search for videos",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/search_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video": {
+            "main": "./lib/actions/delete_video.js",
+            "title": "Delete a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video": {
+            "main": "./lib/actions/get_video.js",
+            "title": "Get a specific video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_video": {
+            "main": "./lib/actions/edit_video.js",
+            "title": "Edit a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_video.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_available_video_channels": {
+            "main": "./lib/actions/get_available_video_channels.js",
+            "title": "Get all the channels to which a user can add or remove a specific video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_available_video_channels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_categories": {
+            "main": "./lib/actions/get_video_categories.js",
+            "title": "Get all the categories to which a video belongs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_categories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "suggest_video_category": {
+            "main": "./lib/actions/suggest_video_category.js",
+            "title": "Suggest categories for a video",
+            "description": "With this method, you can suggest up to two categories and one subcategory for a video. Vimeo makes the final determination about whether the video\nbelongs in these categories.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/suggest_video_category.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comments": {
+            "main": "./lib/actions/get_comments.js",
+            "title": "Get all the comments on a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_comment": {
+            "main": "./lib/actions/create_comment.js",
+            "title": "Add a comment to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_comment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_comment": {
+            "main": "./lib/actions/delete_comment.js",
+            "title": "Delete a video comment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_comment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comment": {
+            "main": "./lib/actions/get_comment.js",
+            "title": "Get a specific video comment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_comment": {
+            "main": "./lib/actions/edit_comment.js",
+            "title": "Edit a video comment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_comment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_comment_replies": {
+            "main": "./lib/actions/get_comment_replies.js",
+            "title": "Get all the replies to a video comment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_comment_replies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_comment_reply": {
+            "main": "./lib/actions/create_comment_reply.js",
+            "title": "Add a reply to a video comment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_comment_reply.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_credits": {
+            "main": "./lib/actions/get_video_credits.js",
+            "title": "Get all the credited users in a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_credits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_credit": {
+            "main": "./lib/actions/add_video_credit.js",
+            "title": "Credit a user in a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_credit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_credit": {
+            "main": "./lib/actions/delete_video_credit.js",
+            "title": "Delete a credit for a user in a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_credit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_credit": {
+            "main": "./lib/actions/get_video_credit.js",
+            "title": "Get a specific credited user in a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_credit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_video_credit": {
+            "main": "./lib/actions/edit_video_credit.js",
+            "title": "Edit a credit for a user in a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_video_credit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_likes": {
+            "main": "./lib/actions/get_video_likes.js",
+            "title": "Get all the users who have liked a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_likes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_thumbnails": {
+            "main": "./lib/actions/get_video_thumbnails.js",
+            "title": "Get all the thumbnails of a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_thumbnails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_video_thumbnail": {
+            "main": "./lib/actions/create_video_thumbnail.js",
+            "title": "Add a video thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_video_thumbnail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_thumbnail": {
+            "main": "./lib/actions/delete_video_thumbnail.js",
+            "title": "Delete a video thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_thumbnail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_thumbnail": {
+            "main": "./lib/actions/get_video_thumbnail.js",
+            "title": "Get a video thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_thumbnail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_video_thumbnail": {
+            "main": "./lib/actions/edit_video_thumbnail.js",
+            "title": "Edit a video thumbnail",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_video_thumbnail.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_embed_preset": {
+            "main": "./lib/actions/delete_video_embed_preset.js",
+            "title": "Remove an embed preset from a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_embed_preset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_embed_preset": {
+            "main": "./lib/actions/get_video_embed_preset.js",
+            "title": "Check if an embed preset has been added to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_embed_preset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_embed_preset": {
+            "main": "./lib/actions/add_video_embed_preset.js",
+            "title": "Add an embed preset to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_embed_preset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_privacy_domains": {
+            "main": "./lib/actions/get_video_privacy_domains.js",
+            "title": "Get all the domains on which a video can be embedded",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_privacy_domains.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_privacy_domain": {
+            "main": "./lib/actions/delete_video_privacy_domain.js",
+            "title": "Restrict a video from being embedded on a domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_privacy_domain.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_privacy_domain": {
+            "main": "./lib/actions/add_video_privacy_domain.js",
+            "title": "Permit a video to be embedded on a domain",
+            "description": "If domain privacy is enabled for this video, this method permits the video to be embedded on the specified domain.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_privacy_domain.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_privacy_users": {
+            "main": "./lib/actions/get_video_privacy_users.js",
+            "title": "Get all the users who can view a user's private videos by default",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_privacy_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_privacy_users": {
+            "main": "./lib/actions/add_video_privacy_users.js",
+            "title": "Permit a list of users to view a private video",
+            "description": "The body of this request should follow our\n[batch request format](https://developer.vimeo.com/api/common-formats#batch-requests). Each object must contain\na single `URI` field, and the value of this field must be the URI of the user who can view this video.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_privacy_users.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_privacy_user": {
+            "main": "./lib/actions/delete_video_privacy_user.js",
+            "title": "Restrict a user from viewing a private video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_privacy_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_privacy_user": {
+            "main": "./lib/actions/add_video_privacy_user.js",
+            "title": "Permit a specific user to view a private video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_privacy_user.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_tags": {
+            "main": "./lib/actions/get_video_tags.js",
+            "title": "Get all the tags of a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_tags": {
+            "main": "./lib/actions/add_video_tags.js",
+            "title": "Add a list of tags to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_video_tag": {
+            "main": "./lib/actions/delete_video_tag.js",
+            "title": "Remove a tag from a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_video_tag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "check_video_for_tag": {
+            "main": "./lib/actions/check_video_for_tag.js",
+            "title": "Check if a tag has been added to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/check_video_for_tag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "add_video_tag": {
+            "main": "./lib/actions/add_video_tag.js",
+            "title": "Add a specific tag to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/add_video_tag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_text_tracks": {
+            "main": "./lib/actions/get_text_tracks.js",
+            "title": "Get all the text tracks of a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_text_tracks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_text_track": {
+            "main": "./lib/actions/create_text_track.js",
+            "title": "Add a text track to a video",
+            "description": "For additional information, see our [text track upload guide](https://developer.vimeo.com/api/upload/texttracks).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_text_track.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_text_track": {
+            "main": "./lib/actions/delete_text_track.js",
+            "title": "Delete a text track",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_text_track.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_text_track": {
+            "main": "./lib/actions/get_text_track.js",
+            "title": "Get a specific text track",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_text_track.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "edit_text_track": {
+            "main": "./lib/actions/edit_text_track.js",
+            "title": "Edit a text track",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/edit_text_track.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_video_custom_logo": {
+            "main": "./lib/actions/create_video_custom_logo.js",
+            "title": "Add a new custom logo to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_video_custom_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_video_custom_logo": {
+            "main": "./lib/actions/get_video_custom_logo.js",
+            "title": "Get a custom video logo",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_video_custom_logo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_video_version": {
+            "main": "./lib/actions/create_video_version.js",
+            "title": "Add a version to a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_video_version.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_related_videos": {
+            "main": "./lib/actions/get_related_videos.js",
+            "title": "Get all the related videos of a video",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_related_videos.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

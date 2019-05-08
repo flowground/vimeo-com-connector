@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "tag": {
+                    "description": "An array of tags to assign.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "tag"
+            ],
+            "type": "object"
+        }
+    }
+}

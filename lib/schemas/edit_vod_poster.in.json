@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        },
+        "poster_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "active": {
+                    "description": "Whether to make this picture the active picture.",
+                    "example": "true",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

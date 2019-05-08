@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "genre_id": {
+            "required": true,
+            "example": "animation",
+            "type": "string"
+        },
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        }
+    }
+}

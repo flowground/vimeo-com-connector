@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        },
+        "direction": {
+            "required": false,
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "example": "asc",
+            "type": "string"
+        },
+        "filter": {
+            "required": false,
+            "enum": [
+                "viewable"
+            ],
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "sort": {
+            "required": false,
+            "enum": [
+                "date",
+                "manual"
+            ],
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "properties": {
+        "direction": {
+            "required": false,
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "example": "asc",
+            "type": "string"
+        },
+        "filter": {
+            "required": false,
+            "enum": [
+                "all",
+                "expiring_soon",
+                "film",
+                "important",
+                "purchased",
+                "rented",
+                "series",
+                "subscription",
+                "unwatched",
+                "watched"
+            ],
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "sort": {
+            "required": false,
+            "enum": [
+                "added",
+                "alphabetical",
+                "date",
+                "name",
+                "purchase_time",
+                "rating",
+                "release_date"
+            ],
+            "type": "string"
+        }
+    }
+}

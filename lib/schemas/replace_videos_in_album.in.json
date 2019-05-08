@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "album_id": {
+            "required": true,
+            "example": 3706071,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "videos": {
+                    "description": "A comma-separated list of video URIs.",
+                    "example": "/videos/258684937,/videos/273576296",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "videos"
+            ],
+            "type": "object"
+        }
+    }
+}

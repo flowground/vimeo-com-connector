@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "word": {
+            "required": true,
+            "example": "awesome",
+            "type": "string"
+        },
+        "direction": {
+            "required": false,
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "example": "asc",
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "sort": {
+            "required": false,
+            "enum": [
+                "created_time",
+                "duration",
+                "name"
+            ],
+            "type": "string"
+        }
+    }
+}

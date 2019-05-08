@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "openapi": {
+            "required": false,
+            "example": "true",
+            "type": "boolean"
+        }
+    }
+}

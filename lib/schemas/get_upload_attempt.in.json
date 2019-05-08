@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "upload": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "follow_user_id": {
+            "required": true,
+            "example": 3766357,
+            "type": "number"
+        }
+    }
+}

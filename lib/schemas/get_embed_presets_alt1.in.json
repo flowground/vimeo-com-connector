@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        }
+    }
+}

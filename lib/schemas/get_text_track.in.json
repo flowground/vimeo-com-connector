@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "texttrack_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        }
+    }
+}

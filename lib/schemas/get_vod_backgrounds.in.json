@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        }
+    }
+}

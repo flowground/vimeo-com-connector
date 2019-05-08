@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "portraitset_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "active": {
+                    "description": "Whether the picture is the user's active portrait.",
+                    "example": "true",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "group_id": {
+            "required": true,
+            "example": 1108,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        }
+    }
+}

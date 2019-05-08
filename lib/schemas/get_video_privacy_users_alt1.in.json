@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        }
+    }
+}

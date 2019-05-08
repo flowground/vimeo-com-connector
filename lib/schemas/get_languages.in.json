@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+        "filter": {
+            "required": false,
+            "enum": [
+                "texttracks"
+            ],
+            "type": "string"
+        }
+    }
+}

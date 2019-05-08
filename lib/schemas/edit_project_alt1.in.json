@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "project_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "name": {
+                    "description": "The name of the project.",
+                    "example": "Rough cuts",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        }
+    }
+}

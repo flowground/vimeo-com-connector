@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        },
+        "filter": {
+            "required": true,
+            "enum": [
+                "batch",
+                "default",
+                "single",
+                "vip"
+            ],
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        }
+    }
+}

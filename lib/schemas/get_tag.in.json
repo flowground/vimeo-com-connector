@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "word": {
+            "required": true,
+            "example": "awesome",
+            "type": "string"
+        }
+    }
+}

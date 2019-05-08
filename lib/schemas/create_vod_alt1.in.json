@@ -1,0 +1,332 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "accepted_currencies": {
+                    "description": "An array of accepted currencies.\n\nOption descriptions:\n * `AUD` - Australian Dollar\n * `CAD` - Canadian Dollar\n * `CHF` - Swiss Franc\n * `DKK` - Danish Krone\n * `EUR` - Euro\n * `GBP` - British Pound\n * `JPY` - Japanese Yen\n * `KRW` - South Korean Won\n * `NOK` - Norwegian Krone\n * `PLN` - Polish Zloty\n * `SEK` - Swedish Krona\n * `USD` - US Dollar\n",
+                    "enum": [
+                        "AUD",
+                        "CAD",
+                        "CHF",
+                        "DKK",
+                        "EUR",
+                        "GBP",
+                        "JPY",
+                        "KRW",
+                        "NOK",
+                        "PLN",
+                        "SEK",
+                        "USD"
+                    ],
+                    "type": "string"
+                },
+                "buy": {
+                    "properties": {
+                        "active": {
+                            "description": "Whether the Buy action is active. *Required if `rent.active` is false.",
+                            "example": "true",
+                            "type": "boolean"
+                        },
+                        "download": {
+                            "description": "Whether people who buy the video can download it. To use this field, `type` must be `film`.",
+                            "example": "true",
+                            "type": "boolean"
+                        },
+                        "price": {
+                            "properties": {
+                                "AUD": {
+                                    "description": "The purchase price of this video in AUD.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "CAD": {
+                                    "description": "The purchase price of this video in CAD.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "CHF": {
+                                    "description": "The purchase price of this video in CHF.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "DKK": {
+                                    "description": "The purchase price of this video in DKK.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "EUR": {
+                                    "description": "The purchase price of this video in EUR.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "GBP": {
+                                    "description": "The purchase price of this video in GBP.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "JPY": {
+                                    "description": "The purchase price of this video in JPY.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "KRW": {
+                                    "description": "The purchase price of this video in KRW.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "NOK": {
+                                    "description": "The purchase price of this video in NOK.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "PLN": {
+                                    "description": "The purchase price of this video in PLN.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "SEK": {
+                                    "description": "The purchase price of this video in SEK.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                },
+                                "USD": {
+                                    "description": "The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`.",
+                                    "example": 2.99,
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "content_rating": {
+                    "description": "One or more ratings, either as a comma-separated list or as a JSON array depending on the request format.",
+                    "enum": [
+                        "drugs",
+                        "language",
+                        "nudity",
+                        "safe",
+                        "unrated",
+                        "violence"
+                    ],
+                    "type": "string"
+                },
+                "description": {
+                    "description": "The description of the On Demand page.",
+                    "example": "DARBY FOREVER follows the fantasies of Darby, a shopgirl at \"Bobbins & Notions\".",
+                    "type": "string"
+                },
+                "domain_link": {
+                    "description": "The custom domain of the On Demand page.",
+                    "example": "https://example.com",
+                    "type": "string"
+                },
+                "episodes": {
+                    "properties": {
+                        "buy": {
+                            "properties": {
+                                "active": {
+                                    "description": "Whether episodes can be bought.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "download": {
+                                    "description": "Whether people who buy the episode can download it. To use this field, `type` must be `series`.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "price": {
+                                    "properties": {
+                                        "USD": {
+                                            "description": "The purchase price per episode. *Required if `episodes.buy.active` is true.",
+                                            "example": 1.99,
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "rent": {
+                            "properties": {
+                                "active": {
+                                    "description": "Whether episodes can be rented",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "period": {
+                                    "description": "The period in which this episode can be rented for.",
+                                    "enum": [
+                                        "1 week",
+                                        "1 year",
+                                        "24 hour",
+                                        "3 month",
+                                        "30 day",
+                                        "48 hour",
+                                        "6 month",
+                                        "72 hour"
+                                    ],
+                                    "type": "string"
+                                },
+                                "price": {
+                                    "properties": {
+                                        "USD": {
+                                            "description": "The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true.",
+                                            "example": 0.99,
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "link": {
+                    "description": "The custom string to use in this On Demand page's Vimeo URL.",
+                    "example": "darbyforever",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the On Demand page.",
+                    "example": "Darby Forever",
+                    "type": "string"
+                },
+                "rent": {
+                    "properties": {
+                        "active": {
+                            "description": "Whether the video can be rented. *Required if `buy.active` is false.",
+                            "example": "true",
+                            "type": "boolean"
+                        },
+                        "period": {
+                            "description": "The period in which this can be rented for.",
+                            "enum": [
+                                "1 week",
+                                "1 year",
+                                "24 hour",
+                                "3 month",
+                                "30 day",
+                                "48 hour",
+                                "6 month",
+                                "72 hour"
+                            ],
+                            "type": "string"
+                        },
+                        "price": {
+                            "properties": {
+                                "AUD": {
+                                    "description": "The rental price of this video in AUD.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "CAD": {
+                                    "description": "The rental price of this video in CAD.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "CHF": {
+                                    "description": "The rental price of this video in CHF.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "DKK": {
+                                    "description": "The rental price of this video in DKK.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "EUR": {
+                                    "description": "The rental price of this video in EUR.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "GBP": {
+                                    "description": "The rental price of this video in GBP.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "JPY": {
+                                    "description": "The rental price of this video in JPY.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "KRW": {
+                                    "description": "The rental price of this video in KRW.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "NOK": {
+                                    "description": "The rental price of this video in NOK.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "PLN": {
+                                    "description": "The rental price of this video in PLN.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "SEK": {
+                                    "description": "The rental price of this video in SEK.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "USD": {
+                                    "description": "The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "subscription": {
+                    "properties": {
+                        "monthly": {
+                            "properties": {
+                                "active": {
+                                    "description": "Whether monthly subscription is active. *Required if `rent.active` and `buy.active` are false.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "price": {
+                                    "properties": {
+                                        "USD": {
+                                            "description": "The monthly subscription price in USD. *Required if `subscription.active` is true.",
+                                            "example": 9.99,
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": {
+                    "description": "The type of On Demand page.",
+                    "enum": [
+                        "film",
+                        "series"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "content_rating",
+                "description",
+                "name",
+                "type"
+            ],
+            "type": "object"
+        }
+    }
+}

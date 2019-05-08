@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "album_id": {
+            "required": true,
+            "example": 3706071,
+            "type": "number"
+        },
+        "logo_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "active": {
+                    "description": "Whether to make this the active album logo.",
+                    "example": "true",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

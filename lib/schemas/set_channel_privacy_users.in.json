@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "users": {
+                    "description": "The array of either the user URIs or the user IDs to permit to view the private channel.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "users"
+            ],
+            "type": "object"
+        }
+    }
+}

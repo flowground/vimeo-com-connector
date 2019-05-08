@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "code": {
+                    "description": "The authorization code received from the authorization server.",
+                    "example": "1234abcd",
+                    "type": "string"
+                },
+                "grant_type": {
+                    "description": "The grant type. Must be set to `authorization_code`.",
+                    "enum": [
+                        "authorization_code"
+                    ],
+                    "type": "string"
+                },
+                "redirect_uri": {
+                    "description": "The redirect URI. Must match the URI from `/oauth/authorize`.",
+                    "example": "https://example.com",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "code",
+                "grant_type",
+                "redirect_uri"
+            ],
+            "type": "object"
+        }
+    }
+}

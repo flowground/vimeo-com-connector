@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "country": {
+            "required": true,
+            "example": "US",
+            "type": "string"
+        }
+    }
+}

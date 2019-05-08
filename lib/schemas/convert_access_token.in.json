@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "grant_type": {
+                    "description": "The grant type. Must be set to `vimeo_oauth1`.",
+                    "enum": [
+                        "vimeo_oauth1"
+                    ],
+                    "type": "string"
+                },
+                "token": {
+                    "description": "The OAuth 1 token.",
+                    "example": "58037c0078d5f54e15e638cc0dd882a570b13c50",
+                    "type": "string"
+                },
+                "token_secret": {
+                    "description": "The OAuth 1 token secret.",
+                    "example": "NTgwMzdjMDA3OGQ1ZjU0ZTE1ZTYzOGNjMGRkODgyYTU3MGIxM2M1MA==",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "grant_type",
+                "token",
+                "token_secret"
+            ],
+            "type": "object"
+        }
+    }
+}

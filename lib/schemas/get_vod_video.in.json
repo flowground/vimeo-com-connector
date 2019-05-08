@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        }
+    }
+}

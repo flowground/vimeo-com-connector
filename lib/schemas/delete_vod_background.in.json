@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "background_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        }
+    }
+}

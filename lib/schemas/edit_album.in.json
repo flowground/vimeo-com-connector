@@ -1,0 +1,107 @@
+{
+    "type": "object",
+    "properties": {
+        "album_id": {
+            "required": true,
+            "example": 3706071,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "brand_color": {
+                    "description": "The hexadecimal code for the color of the player buttons.",
+                    "example": "ff66ee",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "The description of the album.",
+                    "example": "Vimeo holiday videos!",
+                    "type": "string"
+                },
+                "domain": {
+                    "description": "The custom domain a user has selected for their album.",
+                    "example": "mycustomdomain.com",
+                    "nullable": true,
+                    "type": "string"
+                },
+                "hide_nav": {
+                    "description": "Whether to hide Vimeo navigation when displaying the album.",
+                    "example": "true",
+                    "type": "boolean"
+                },
+                "layout": {
+                    "description": "The type of layout for presenting the album.",
+                    "enum": [
+                        "grid",
+                        "player"
+                    ],
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the album.",
+                    "example": "Vimeo Holiday Videos!",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "The album's password. Required only if **privacy** is `password`.",
+                    "example": "hunter1",
+                    "type": "string"
+                },
+                "privacy": {
+                    "description": "The privacy level of the album.",
+                    "enum": [
+                        "anybody",
+                        "embed_only",
+                        "password"
+                    ],
+                    "type": "string"
+                },
+                "review_mode": {
+                    "description": "Whether album videos should use the review mode URL.",
+                    "example": "true",
+                    "type": "boolean"
+                },
+                "sort": {
+                    "description": "The default sort order of the album's videos.",
+                    "enum": [
+                        "added_first",
+                        "added_last",
+                        "alphabetical",
+                        "arranged",
+                        "comments",
+                        "likes",
+                        "newest",
+                        "oldest",
+                        "plays"
+                    ],
+                    "type": "string"
+                },
+                "theme": {
+                    "description": "The color theme of the album.",
+                    "enum": [
+                        "dark",
+                        "standard"
+                    ],
+                    "type": "string"
+                },
+                "url": {
+                    "description": "The custom Vimeo URL a user has selected for their album.",
+                    "example": "my-custom-url",
+                    "nullable": true,
+                    "type": "string"
+                },
+                "use_custom_domain": {
+                    "description": "Whether the user has opted in to use a custom domain for their album.",
+                    "example": "true",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

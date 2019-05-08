@@ -1,0 +1,182 @@
+{
+    "type": "object",
+    "properties": {
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "buy": {
+                    "properties": {
+                        "price": {
+                            "properties": {
+                                "AUD": {
+                                    "description": "The purchase price of this video in AUD.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "CAD": {
+                                    "description": "The purchase price of this video in CAD.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "CHF": {
+                                    "description": "The purchase price of this video in CHF.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "DKK": {
+                                    "description": "The purchase price of this video in DKK.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "EUR": {
+                                    "description": "The purchase price of this video in EUR.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "GBP": {
+                                    "description": "The purchase price of this video in GBP.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "JPY": {
+                                    "description": "The purchase price of this video in JPY.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "KRW": {
+                                    "description": "The purchase price of this video in KRW.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "NOK": {
+                                    "description": "The purchase price of this video in NOK.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "PLN": {
+                                    "description": "The purchase price of this video in PLN.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "SEK": {
+                                    "description": "The purchase price of this video in SEK.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                },
+                                "USD": {
+                                    "description": "The purchase price of this video in USD. *Required if `buy.active` is true.",
+                                    "example": 1.99,
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "position": {
+                    "description": "The position of this video in the On Demand collection.",
+                    "example": 10,
+                    "type": "number"
+                },
+                "release_year": {
+                    "description": "The video release year.",
+                    "example": 2018,
+                    "type": "number"
+                },
+                "rent": {
+                    "properties": {
+                        "price": {
+                            "properties": {
+                                "AUD": {
+                                    "description": "The rental price of this video in AUD.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "CAD": {
+                                    "description": "The rental price of this video in CAD.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "CHF": {
+                                    "description": "The rental price of this video in CHF.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "DKK": {
+                                    "description": "The rental price of this video in DKK.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "EUR": {
+                                    "description": "The rental price of this video in EUR.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "GBP": {
+                                    "description": "The rental price of this video in GBP.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "JPY": {
+                                    "description": "The rental price of this video in JPY.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "KRW": {
+                                    "description": "The rental price of this video in KRW.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "NOK": {
+                                    "description": "The rental price of this video in NOK.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "PLN": {
+                                    "description": "The rental price of this video in PLN.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "SEK": {
+                                    "description": "The rental price of this video in SEK.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                },
+                                "USD": {
+                                    "description": "The rental price of this video in USD. *Required if `rent.active` is true.",
+                                    "example": 0.99,
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": {
+                    "description": "The type of video that you are adding to the On Demand page.",
+                    "enum": [
+                        "extra",
+                        "main",
+                        "trailer"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "type": "object"
+        }
+    }
+}

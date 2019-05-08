@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "album_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 196367152,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "time_code": {
+                    "description": "The video frame time in seconds to use as the album thumbnail.",
+                    "example": 300,
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

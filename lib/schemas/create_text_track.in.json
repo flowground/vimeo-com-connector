@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "active": {
+                    "description": "Active text tracks appear in the player and are visible to other users. Only one text track per language can be active.",
+                    "example": "true",
+                    "type": "boolean"
+                },
+                "language": {
+                    "description": "The language of the text track. For a complete list of valid languages, use the [/languages?filter=texttracks](https://developer.vimeo.com/api/endpoints/videos#GET/languages) endpoint.",
+                    "example": "en-US",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the text track.",
+                    "example": "Commentary",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of the text track.",
+                    "enum": [
+                        "captions",
+                        "chapters",
+                        "descriptions",
+                        "metadata",
+                        "subtitles"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "language",
+                "name",
+                "type"
+            ],
+            "type": "object"
+        }
+    }
+}

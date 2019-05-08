@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "filter": {
+            "required": false,
+            "enum": [
+                "related"
+            ],
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        }
+    }
+}

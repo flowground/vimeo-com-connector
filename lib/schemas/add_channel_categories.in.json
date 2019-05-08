@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "channels": {
+                    "description": "The array of category URIs to add.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "channels"
+            ],
+            "type": "object"
+        }
+    }
+}

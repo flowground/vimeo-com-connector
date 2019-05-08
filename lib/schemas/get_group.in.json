@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "group_id": {
+            "required": true,
+            "example": 1108,
+            "type": "number"
+        }
+    }
+}

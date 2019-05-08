@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "upload": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "signature": {
+            "required": true,
+            "example": "cd89a20adde7a608f3331e71c37bdfa087bacbf3",
+            "type": "string"
+        },
+        "video_file_id": {
+            "required": true,
+            "example": 1234,
+            "type": "number"
+        }
+    }
+}

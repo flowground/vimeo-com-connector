@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "album_id": {
+            "required": true,
+            "example": 3706071,
+            "type": "number"
+        },
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 196367152,
+            "type": "number"
+        },
+        "password": {
+            "required": false,
+            "example": "hunter1",
+            "type": "string"
+        }
+    }
+}

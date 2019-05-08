@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "domain": {
+            "required": true,
+            "example": "example.com",
+            "type": "string"
+        },
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        }
+    }
+}

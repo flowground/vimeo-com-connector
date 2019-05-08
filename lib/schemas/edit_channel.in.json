@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "description": "The description of the channel.",
+                    "example": "We really love videos, and these are the videos we really, really love.",
+                    "type": "string"
+                },
+                "link": {
+                    "description": "The link to access the channel. You can use a custom name in the URL in place of a numeric channel ID, as in `/channels/{url_custom}`. Submitting `\"\"` for this field removes the link alias.",
+                    "example": "staffpicks",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the channel.",
+                    "example": "Vimeo Staff Picks",
+                    "type": "string"
+                },
+                "privacy": {
+                    "description": "The privacy level of the channel.",
+                    "enum": [
+                        "anybody",
+                        "moderators",
+                        "users"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

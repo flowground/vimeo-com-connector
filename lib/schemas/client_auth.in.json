@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "grant_type": {
+                    "description": "The grant type. Must be set to `client_credentials`.",
+                    "enum": [
+                        "client_credentials"
+                    ],
+                    "type": "string"
+                },
+                "scope": {
+                    "description": "A space-separated list of the authentication [scopes](https://developer.vimeo.com/api/authentication#supported-scopes) that you want to access. The default is `public`.",
+                    "example": "public",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "grant_type",
+                "scope"
+            ],
+            "type": "object"
+        }
+    }
+}

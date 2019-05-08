@@ -1,0 +1,61 @@
+{
+    "type": "object",
+    "properties": {
+        "category": {
+            "required": true,
+            "example": "animation",
+            "type": "string"
+        },
+        "direction": {
+            "required": false,
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "example": "asc",
+            "type": "string"
+        },
+        "filter": {
+            "required": false,
+            "enum": [
+                "conditional_featured",
+                "embeddable"
+            ],
+            "type": "string"
+        },
+        "filter_embeddable": {
+            "required": false,
+            "example": "true",
+            "type": "boolean"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "query": {
+            "required": false,
+            "example": "Stop motion",
+            "type": "string"
+        },
+        "sort": {
+            "required": false,
+            "enum": [
+                "alphabetical",
+                "comments",
+                "date",
+                "duration",
+                "featured",
+                "likes",
+                "plays",
+                "relevant"
+            ],
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "preset_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        }
+    }
+}

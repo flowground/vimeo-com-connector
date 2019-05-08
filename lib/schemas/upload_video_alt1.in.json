@@ -1,0 +1,365 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "content_rating": {
+                    "description": "A list of values describing the content in this video. Find the full list in the [/contentratings](https://developer.vimeo.com/api/endpoints/videos#GET/contentratings) endpoint.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "The description of the video.",
+                    "example": "A celebration of 10 years of Staff Picks.",
+                    "type": "string"
+                },
+                "embed": {
+                    "properties": {
+                        "buttons": {
+                            "properties": {
+                                "embed": {
+                                    "description": "Show or hide the Embed button.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "fullscreen": {
+                                    "description": "Show or hide the Fullscreen button.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "hd": {
+                                    "description": "Show or hide the HD button.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "like": {
+                                    "description": "Show or hide the Like button.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "scaling": {
+                                    "description": "Show or hide the Scaling button (shown only in Fullscreen mode).",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "share": {
+                                    "description": "Show or hide the Share button.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                },
+                                "watchlater": {
+                                    "description": "Show or hide the Watch Later button.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "color": {
+                            "description": "The main color of the embed player.",
+                            "example": "#1ab7ea",
+                            "type": "string"
+                        },
+                        "logos": {
+                            "properties": {
+                                "custom": {
+                                    "properties": {
+                                        "active": {
+                                            "description": "Show or hide your custom logo.",
+                                            "example": "true",
+                                            "type": "boolean"
+                                        },
+                                        "link": {
+                                            "description": "The URL that loads when the user clicks your custom logo.",
+                                            "example": "https://example.com",
+                                            "type": "string"
+                                        },
+                                        "sticky": {
+                                            "description": "Whether always to show the custom logo or to hide it after time with the rest of the UI.",
+                                            "example": "true",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "vimeo": {
+                                    "description": "Show or hide the Vimeo logo.",
+                                    "example": "true",
+                                    "type": "boolean"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "playbar": {
+                            "description": "Show or hide the playbar.",
+                            "example": "true",
+                            "type": "boolean"
+                        },
+                        "title": {
+                            "properties": {
+                                "name": {
+                                    "description": "Show or hide the video title, or enable the user to determine whether the video title appears.",
+                                    "enum": [
+                                        "hide",
+                                        "show",
+                                        "user"
+                                    ],
+                                    "type": "string"
+                                },
+                                "owner": {
+                                    "description": "Show or hide the owner information, or enable the user to determine whether the owner information appears.",
+                                    "enum": [
+                                        "hide",
+                                        "show",
+                                        "user"
+                                    ],
+                                    "type": "string"
+                                },
+                                "portrait": {
+                                    "description": "Show or hide the owner portrait, or enable the user to determine whether the owner portrait appears.",
+                                    "enum": [
+                                        "hide",
+                                        "show",
+                                        "user"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "volume": {
+                            "description": "Show or hide the volume selector.",
+                            "example": "true",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "license": {
+                    "description": "The Creative Commons license.",
+                    "enum": [
+                        "by",
+                        "by-nc",
+                        "by-nc-nd",
+                        "by-nc-sa",
+                        "by-nd",
+                        "by-sa",
+                        "cc0"
+                    ],
+                    "type": "string"
+                },
+                "locale": {
+                    "description": "The video's default language. For a full list of valid languages, use the [/languages?filter=texttracks](https://developer.vimeo.com/api/endpoints/videos#GET/languages) endpoint.",
+                    "example": "en_US",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The title of the video.",
+                    "example": "Celebrating 10 Years of Staff Picks",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "The password. When you set `privacy.view` to `password`, you must provide the password as an additional parameter.",
+                    "example": "hunter1",
+                    "type": "string"
+                },
+                "privacy": {
+                    "properties": {
+                        "add": {
+                            "description": "Whether a user can add the video to an album, channel, or group.",
+                            "example": "true",
+                            "type": "boolean"
+                        },
+                        "comments": {
+                            "description": "The privacy level required to comment on the video.",
+                            "enum": [
+                                "anybody",
+                                "contacts",
+                                "nobody"
+                            ],
+                            "type": "string"
+                        },
+                        "download": {
+                            "description": "Whether a user can download the video. Not available to users with a Basic membership",
+                            "example": "true",
+                            "type": "boolean"
+                        },
+                        "embed": {
+                            "description": "The video's embed settings. The `whitelist` value enables you to define all valid embed domains. See our [documentation](https://developer.vimeo.com/api/endpoints/videos#/{video_id}/privacy/domains) for details on adding and removing domains.",
+                            "enum": [
+                                "private",
+                                "public",
+                                "whitelist"
+                            ],
+                            "type": "string"
+                        },
+                        "view": {
+                            "description": "The video's privacy setting. When privacy is `users`, `application/json` is the only valid content type. Basic users can't set privacy to `unlisted`.",
+                            "enum": [
+                                "anybody",
+                                "contacts",
+                                "disable",
+                                "nobody",
+                                "password",
+                                "unlisted",
+                                "users"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "ratings": {
+                    "properties": {
+                        "mpaa": {
+                            "properties": {
+                                "reason": {
+                                    "description": "The reason for the video's MPAA rating.\n\nOption descriptions:\n * `at` - Adult themes\n * `bn` - Brief nudity\n * `n` - Nudity\n * `sl` - Strong language\n * `ss` - Sexual situations\n * `v` - Violence\n",
+                                    "enum": [
+                                        "at",
+                                        "bn",
+                                        "n",
+                                        "sl",
+                                        "ss",
+                                        "v"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "tv": {
+                            "properties": {
+                                "reason": {
+                                    "description": "The reason for the video's TV rating.\n\nOption descriptions:\n * `d` - Suggestive dialogue\n * `fv` - Fantasy violence\n * `l` - Language\n * `ss` - Sexual situations\n * `v` - Violence\n",
+                                    "enum": [
+                                        "d",
+                                        "fv",
+                                        "l",
+                                        "ss",
+                                        "v"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "review_page": {
+                    "properties": {
+                        "active": {
+                            "description": "Enable or disable video review.",
+                            "example": "true",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "spatial": {
+                    "properties": {
+                        "director_timeline": {
+                            "description": "The 360 director timeline.",
+                            "items": {
+                                "properties": {
+                                    "pitch": {
+                                        "description": "The timeline pitch. This value must be between -90 and 90.",
+                                        "example": 70,
+                                        "type": "number"
+                                    },
+                                    "roll": {
+                                        "description": "The timeline roll.",
+                                        "type": "number"
+                                    },
+                                    "time_code": {
+                                        "description": "The 360 director timeline time code.",
+                                        "example": 5,
+                                        "type": "number"
+                                    },
+                                    "yaw": {
+                                        "description": "The timeline yaw. This value must be between 0 and 360.",
+                                        "example": 125,
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "pitch",
+                                    "time_code",
+                                    "yaw"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "field_of_view": {
+                            "description": "The 360 field of view: default 50, minimum 30, maximum 90.",
+                            "example": 50,
+                            "type": "number"
+                        },
+                        "projection": {
+                            "description": "The 360 spatial projection.",
+                            "enum": [
+                                "cubical",
+                                "cylindrical",
+                                "dome",
+                                "equirectangular",
+                                "pyramid"
+                            ],
+                            "type": "string"
+                        },
+                        "stereo_format": {
+                            "description": "The 360 spatial stereo format.",
+                            "enum": [
+                                "left-right",
+                                "mono",
+                                "top-bottom"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "upload": {
+                    "properties": {
+                        "approach": {
+                            "description": "The upload approach.",
+                            "enum": [
+                                "post",
+                                "pull",
+                                "streaming",
+                                "tus"
+                            ],
+                            "type": "string"
+                        },
+                        "link": {
+                            "description": "The public URL at which the video is hosted. The URL must be valid for at least 24 hours. Use this parameter when `approach` is `pull`.",
+                            "example": "https://example.com/video.mp4",
+                            "type": "string"
+                        },
+                        "redirect_url": {
+                            "description": "The app's redirect URL. Use this parameter when `approach` is `post`.",
+                            "example": "https://example.com",
+                            "type": "string"
+                        },
+                        "size": {
+                            "description": "The size in bytes of the video to upload.",
+                            "example": "13623861",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "approach"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "upload"
+            ],
+            "type": "object"
+        }
+    }
+}

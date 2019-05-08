@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "required": true,
+            "example": 152184,
+            "type": "number"
+        },
+        "offset": {
+            "required": false,
+            "example": "280",
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "type": {
+            "required": false,
+            "enum": [
+                "appears",
+                "category_featured",
+                "channel",
+                "facebook_feed",
+                "following",
+                "group",
+                "likes",
+                "ondemand_publish",
+                "share",
+                "tagged_with",
+                "twitter_timeline",
+                "uploads"
+            ],
+            "type": "string"
+        }
+    }
+}

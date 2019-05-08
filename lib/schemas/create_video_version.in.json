@@ -1,0 +1,57 @@
+{
+    "type": "object",
+    "properties": {
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "file_name": {
+                    "description": "The name of the version",
+                    "example": "untitled.mp4",
+                    "type": "string"
+                },
+                "upload": {
+                    "properties": {
+                        "approach": {
+                            "description": "Upload approach",
+                            "enum": [
+                                "post",
+                                "pull",
+                                "streaming",
+                                "tus"
+                            ],
+                            "type": "string"
+                        },
+                        "link": {
+                            "description": "If your upload approach is pull, Vimeo will download the video hosted at this public URL. This URL must be valid for at least 24 hours.",
+                            "example": "https://example.com",
+                            "type": "string"
+                        },
+                        "redirect_url": {
+                            "description": "The app's redirect URL. Use this parameter when `approach` is `post`.",
+                            "example": "https://example.com",
+                            "type": "string"
+                        },
+                        "size": {
+                            "description": "Upload size",
+                            "example": "13623861",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "approach"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "file_name",
+                "upload"
+            ],
+            "type": "object"
+        }
+    }
+}

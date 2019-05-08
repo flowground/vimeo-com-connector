@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "active": {
+                    "description": "Whether the image created by the `time` field should be the default thumbnail for the video.",
+                    "example": "true",
+                    "type": "boolean"
+                },
+                "time": {
+                    "description": "Creates an image of the video from the given time offset.",
+                    "example": 300,
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

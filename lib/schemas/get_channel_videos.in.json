@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "containing_uri": {
+            "required": false,
+            "example": "/videos/258684937",
+            "type": "string"
+        },
+        "direction": {
+            "required": false,
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "example": "asc",
+            "type": "string"
+        },
+        "filter": {
+            "required": false,
+            "enum": [
+                "embeddable"
+            ],
+            "type": "string"
+        },
+        "filter_embeddable": {
+            "required": false,
+            "example": "true",
+            "type": "boolean"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "query": {
+            "required": false,
+            "example": "Stop motion",
+            "type": "string"
+        },
+        "sort": {
+            "required": false,
+            "enum": [
+                "added",
+                "alphabetical",
+                "comments",
+                "date",
+                "default",
+                "duration",
+                "likes",
+                "manual",
+                "modified_time",
+                "plays"
+            ],
+            "type": "string"
+        }
+    }
+}

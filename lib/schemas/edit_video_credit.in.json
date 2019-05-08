@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "credit_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "name": {
+                    "description": "The name of the person being credited.",
+                    "example": "Sam Doe",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "The role of the person being credited.",
+                    "example": "Producer",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "portfolio_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        }
+    }
+}

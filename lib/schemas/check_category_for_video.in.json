@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "category": {
+            "required": true,
+            "example": "animation",
+            "type": "string"
+        },
+        "video_id": {
+            "required": true,
+            "example": 273576296,
+            "type": "number"
+        }
+    }
+}

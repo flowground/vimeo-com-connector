@@ -1,0 +1,72 @@
+{
+    "type": "object",
+    "properties": {
+        "direction": {
+            "required": false,
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "example": "asc",
+            "type": "string"
+        },
+        "filter": {
+            "required": false,
+            "enum": [
+                "CC",
+                "CC-BY",
+                "CC-BY-NC",
+                "CC-BY-NC-ND",
+                "CC-BY-NC-SA",
+                "CC-BY-ND",
+                "CC-BY-SA",
+                "CC0",
+                "categories",
+                "duration",
+                "in-progress",
+                "minimum_likes",
+                "trending",
+                "upload_date"
+            ],
+            "type": "string"
+        },
+        "links": {
+            "required": false,
+            "example": "https://vimeo.com/122375452,https://vimeo.com/273576296",
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "query": {
+            "required": true,
+            "example": "staff picks",
+            "type": "string"
+        },
+        "sort": {
+            "required": false,
+            "enum": [
+                "alphabetical",
+                "comments",
+                "date",
+                "duration",
+                "likes",
+                "plays",
+                "relevant"
+            ],
+            "type": "string"
+        },
+        "uris": {
+            "required": false,
+            "example": "/videos/122375452,/videos/273576296",
+            "type": "string"
+        }
+    }
+}

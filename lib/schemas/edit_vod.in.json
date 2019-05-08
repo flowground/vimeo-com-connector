@@ -1,0 +1,50 @@
+{
+    "type": "object",
+    "properties": {
+        "ondemand_id": {
+            "required": true,
+            "example": 61326,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "link": {
+                    "description": "The custom string to use in this On Demand page's Vimeo URL.",
+                    "example": "darbyforever",
+                    "type": "string"
+                },
+                "preorder": {
+                    "properties": {
+                        "active": {
+                            "description": "If set to true, you will enable pre-orders on the On Demand page.",
+                            "example": "true",
+                            "type": "boolean"
+                        },
+                        "publish_time": {
+                            "description": "The time that the On Demand page will be published. *Required if `preorder.active` is `true`.",
+                            "example": "2017-05-16T15:05:43+00:00",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "publish": {
+                    "properties": {
+                        "active": {
+                            "description": "Whether to publish the On Demand page.",
+                            "example": "true",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "publish_when_ready": {
+                    "description": "Whether to publish the On Demand page automatically after all videos are finished transcoding.",
+                    "example": "true",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

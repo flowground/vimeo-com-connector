@@ -1,0 +1,58 @@
+{
+    "type": "object",
+    "properties": {
+        "group_id": {
+            "required": true,
+            "example": 1108,
+            "type": "number"
+        },
+        "direction": {
+            "required": false,
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "example": "asc",
+            "type": "string"
+        },
+        "filter": {
+            "required": false,
+            "enum": [
+                "embeddable"
+            ],
+            "type": "string"
+        },
+        "filter_embeddable": {
+            "required": false,
+            "example": "true",
+            "type": "boolean"
+        },
+        "page": {
+            "required": false,
+            "example": 1,
+            "type": "number"
+        },
+        "per_page": {
+            "required": false,
+            "example": 10,
+            "type": "number"
+        },
+        "query": {
+            "required": false,
+            "example": "Stop motion",
+            "type": "string"
+        },
+        "sort": {
+            "required": false,
+            "enum": [
+                "alphabetical",
+                "comments",
+                "date",
+                "duration",
+                "likes",
+                "plays"
+            ],
+            "type": "string"
+        }
+    }
+}

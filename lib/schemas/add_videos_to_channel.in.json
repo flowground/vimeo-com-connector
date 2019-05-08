@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "video_uri": {
+                    "description": "The URI of a video to add.",
+                    "example": "/videos/258684937",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "video_uri"
+            ],
+            "type": "object"
+        }
+    }
+}

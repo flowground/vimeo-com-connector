@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "project_id": {
+            "required": true,
+            "example": 12345,
+            "type": "number"
+        },
+        "should_delete_clips": {
+            "required": false,
+            "example": "false",
+            "type": "boolean"
+        },
+        "uris": {
+            "required": true,
+            "example": "/videos/258684937,/videos/273576296",
+            "type": "string"
+        }
+    }
+}

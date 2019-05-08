@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "category": {
+            "required": true,
+            "example": "animation",
+            "type": "string"
+        },
+        "channel_id": {
+            "required": true,
+            "example": 927,
+            "type": "number"
+        }
+    }
+}

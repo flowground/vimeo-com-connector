@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "video_id": {
+            "required": true,
+            "example": 258684937,
+            "type": "number"
+        },
+        "requestBody": {
+            "properties": {
+                "category": {
+                    "description": "The array of the names of the categories that you're suggesting.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "category"
+            ],
+            "type": "object"
+        }
+    }
+}
